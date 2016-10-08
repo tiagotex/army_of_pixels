@@ -19,8 +19,10 @@ $(document).on('turbolinks:load', function() {
     '</style>');
 
     if (converting === 'true') {
-        $('body').addClass('converted');
-        $(".wololo")[0].play();
+        setTimeout(function () {
+            $('body').addClass('converted');
+            $(".wololo")[0].play();
+        }, 750)
     }
 
     $('.btn-cta').on('click', function () {
