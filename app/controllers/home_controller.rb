@@ -21,6 +21,8 @@ class HomeController < ApplicationController
       return cancel_convertion unless user
       @new_color = user.color.hex
 
+      @team_size += 1
+
       current_user.color_id = user.color_id
       current_user.save
 
