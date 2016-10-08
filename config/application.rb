@@ -39,13 +39,13 @@ module ArmyOfPixels
           flash.alert = I18n.t(message)
         end
 
-        redirect_to new_sessions_url
+        redirect_to new_session_url
       end
     end
 
-
+    require 'pixels_camp_auth_strategy'
     config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
-      manager.default_strategies :pixel_camp_auth
+      manager.default_strategies :pixels_camp_auth
       manager.failure_app = UnauthorizedController
     end
   end

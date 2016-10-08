@@ -1,5 +1,9 @@
 require 'net/http'
-class PixelsCampAuthStrategy < ::Warden::Strategies::Base
+Warden::Strategies.add(:pixels_camp_auth) do
+  def valid?
+     true
+  end
+
   def authenticate!
     uri = URI.parse('https://api.pixels.camp/user/auth')
     request = Net::HTTP::Post.new(uri)
@@ -9,11 +13,11 @@ class PixelsCampAuthStrategy < ::Warden::Strategies::Base
       http.request(request)
     end
 
-    return fail! message: "strategies.password.failed" unless result.code == 200
-
-    body = JSON.parse(result.body)
+    return fail! message: "strategies.password.failed" unless result.code == '200'
 
     user = User.find_by(username: body['login'])
+    user.token = Digest::SHA1.hexdigest(Time.now.to_s)
+    user.save
 
     if user.present?
       success! user
@@ -22,5 +26,3 @@ class PixelsCampAuthStrategy < ::Warden::Strategies::Base
     end
   end
 end
-
-Warden::Strategies.add(:pixel_camp_auth, PixelsCampStrategy)
