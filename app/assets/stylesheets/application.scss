@@ -27,7 +27,7 @@ body {
     left:0;
 
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     // pixel:before
     &:before {
         content: "";
@@ -121,7 +121,8 @@ input[name='token'] {
     appearance: none;
     box-shadow: none;
     border-radius: none;
-    padding: 10px;
+    padding: 0;
+    text-align: center;
     border: none;
     border-bottom: solid 2px #c9c9c9;
     transition: border 0.3s;
@@ -131,6 +132,11 @@ input[name='token']:focus {
 }
 .cta h2 {
     font-size: 30px;
+    margin: 0 0 30px;
+}
+.cta {
+  background-color: rgba(255, 255, 255, .5);
+  padding: 45px;
 }
 .flip-container {
     -webkit-perspective: 1000;
@@ -199,6 +205,9 @@ input[name='token']:focus {
 }
 
 @media (min-width:1025px) {
+  .login .cta {
+      top: 60%;
+  }
   .pixel {
     position: fixed;
     width: 100%;
