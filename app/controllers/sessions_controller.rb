@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   skip_before_filter :authenticate!
 
   def new
-    @color = '#fdcf1a'
-
     if params['user_token']
       session[:converting] = true
       session[:user_token] = params['user_token']
