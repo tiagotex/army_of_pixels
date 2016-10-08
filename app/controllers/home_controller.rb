@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  GOOGLE_QR = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http://armyofpixels.club/session/new?user_token=TOKEN&choe=UTF-8'
+  GOOGLE_QR = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=http://armyofpixels.club/session/new?user_token=TOKEN&choe=UTF-8'
 
   def index
     @color = current_user.color.hex
