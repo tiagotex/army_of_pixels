@@ -1,0 +1,16 @@
+<%= javascript_tag do %>
+  window.pixel = '<%= j @color %>';
+<% end %>
+
+<div class="login pixel">
+    <div class="bandana"></div>
+    <div class="cta">
+        <h2>Copy your auth token from your <a href="https://pixels.camp/profile/">pixels.camp profile</a> here</h2>
+
+        <%= form_tag "/session" do %>
+
+          <%= text_field_tag "token", "default info" %>
+          <%= submit_tag "Save",  class: "btn-cta-2 actions" %>
+        <% end %>
+    </div>
+</div>
