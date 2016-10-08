@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   GOOGLE_QR = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=http://armyofpixels.club/session/new?user_token=TOKEN&choe=UTF-8'
-  skip_before_filter :authenticate!
+
   def index
     # current_user.color
     @color = '#fdcf1a'
