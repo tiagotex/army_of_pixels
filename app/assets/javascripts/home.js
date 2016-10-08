@@ -15,6 +15,7 @@ $(document).on('turbolinks:load', function() {
         '.converted .bandana {background-color: ' + $newBandanaColor + '!important }'+
         '.converted .pixel:before {background: ' + $newColor + '; }'+
         '.converted .btn-cta {background-color: ' + $newBandanaColor + '!important }'+
+        '.converted .bandana svg g {fill: ' + $newColor + '!important }'+
     '</style>');
 
     if (converting === 'true') {
