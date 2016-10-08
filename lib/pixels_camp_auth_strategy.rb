@@ -15,6 +15,8 @@ Warden::Strategies.add(:pixels_camp_auth) do
 
     return fail! message: "strategies.password.failed" unless result.code == '200'
 
+    body = JSON.parse(result.body)
+
     user = User.find_by(username: body['login'])
     user.token = Digest::SHA1.hexdigest(Time.now.to_s)
     user.save

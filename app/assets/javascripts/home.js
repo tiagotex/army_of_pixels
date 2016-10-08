@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
     }
 
     $('.btn-cta').on('click', function () {
-        $('body').addClass('converted');
-        $('.flip-container').toggleClass('hover');
+        $('.flip-container').addClass('hover');
+        $(this).hide()
     })
 });

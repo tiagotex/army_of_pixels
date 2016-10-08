@@ -5,18 +5,13 @@
 <% end %>
 
 <div class="pixel">
-    <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
+    <% link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
     <div class="bandana"></div>
-    <div class="cta">
-        <button class="btn-cta">SPREAD PIXEL</button>
-    </div>
-    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flip-container hover">
       <div class="flipper">
-        <div class="front">
-            &nbsp;
-        </div>
         <div class="back">
             <img src="<%= @qr_code %>">
+            <h2 style="text-align:center;font-size:14px;font-weight:bold;">SPREAD YOUR PIXEL</h2>
         </div>
       </div>
     </div>
