@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function() {
 
     if (converting === 'true') {
         $('body').addClass('converted');
-        $(".wololo").trigger('play');
+        $(".wololo")[0].play();
     }
 
     $('.btn-cta').on('click', function () {
