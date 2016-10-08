@@ -12,6 +12,8 @@ class HomeController < ApplicationController
     @qr_code = GOOGLE_QR.gsub('TOKEN', current_user.token)
     @team_size = Color.find_by(id: current_user.color_id).users_count
 
+    @converting = 'true'
+
     if session[:converting]
       return cancel_convertion if current_user.token == session[:user_token]
 
