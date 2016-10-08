@@ -1,9 +1,21 @@
 $(document).on('turbolinks:load', function() {
-    $pixelConv = tinycolor(color).complement().toHexString();
-    $bandana = tinycolor(color).complement().toHexString();
-    $bandanaConv = tinycolor(old_color).complement().toHexString();
+
+    $oldColor = color
+    $oldBandanaColor = tinycolor($oldColor).complement().toHexString()
+
+    $newColor = new_color
+    $newBandanaColor = tinycolor($newColor).complement().toHexString()
+
     $('.home audio').trigger('load');
-    $('head').append('<style>.bandana { background-color: ' + $bandana + '} .btn-cta, .btn-cta-2 {background-color: ' + $bandana + '} .converted .bandana {background-color: ' + old_color + '!important }.converted .pixel:before {background: ' + $pixelConv + '; } .converted .btn-cta {background-color: ' + old_color + '!important } .pixel{ background-color: '+ color +'}</style>');
+
+    $('head').append('<style>'+
+        '.pixel{ background-color: '+ $oldColor +'}'+
+        '.bandana { background-color: ' + $oldBandanaColor + '}'+
+        '.btn-cta, .btn-cta-2 {background-color: ' + $oldBandanaColor + '}'+
+        '.converted .bandana {background-color: ' + $newBandanaColor + '!important }'+
+        '.converted .pixel:before {background: ' + $newColor + '; }'+
+        '.converted .btn-cta {background-color: ' + $newBandanaColor + '!important }'+
+    '</style>');
 
     if (converting === 'true') {
         $('body').addClass('converted');

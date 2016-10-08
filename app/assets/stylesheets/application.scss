@@ -86,6 +86,7 @@ body {
     height: 150px;
     // background: red;
     position: absolute;
+    display: block;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -101,6 +102,7 @@ body {
     height: 150px;
     // background: red;
     position: relative;
+    display: block;
     margin: 0 auto;
     font-weight: 700;
     border: 0;
@@ -109,7 +111,7 @@ body {
     margin-top: 20px;
 }
 
-input[name='auth_token'] {
+input[name='token'] {
     display: block;
     margin: 0;
     width: 100%;
@@ -124,7 +126,7 @@ input[name='auth_token'] {
     border-bottom: solid 2px #c9c9c9;
     transition: border 0.3s;
 }
-input[name='auth_token']:focus {
+input[name='token']:focus {
   outline: none;
 }
 .cta h2 {
